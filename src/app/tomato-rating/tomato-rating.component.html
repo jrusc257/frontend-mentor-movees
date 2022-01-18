@@ -1,0 +1,3 @@
+<img *ngIf="ratingFresh()" class="tomato-icon" src="/assets/images/tomato-fresh.png">
+<img *ngIf="!ratingFresh()" class="tomato-icon"  src="/assets/images/tomato-rotten.png">
+<span class="tomato-rating">{{ratingPercent}}</span>

@@ -1,0 +1,36 @@
+<div id="HeroHeader">
+    <div class="hero-card">
+        <h1>All your favorite movies!</h1>
+        <p>
+            We've got 'em, and you can watch 'em.  Not on this site, unfortunately, but maybe if you have Netflix?
+        </p>
+    </div>
+</div>
+<div id="ListContainer">
+    <div id="SearchBar">
+        <span>
+            <span class="input-wrapper">
+                <input type="text" [(ngModel)]="searchText" />
+                <button *ngIf="searchText" class="clear-button" (click)="resetSearch()">X</button>
+            </span>
+            Search
+            <span class="radio-wrapper">
+                <input type="radio"
+                   id="ascSort"
+                   [checked]="listSortOrder ==='asc'"
+                   (change)="setSortOrder('asc')">
+                   <label for="ascSort">Ascending</label>
+                <input type="radio"
+                   id="descSort"
+                   [checked]="listSortOrder ==='desc'"
+                   (change)="setSortOrder('desc')">
+                   <label for="descSort">Descending</label>
+            </span>
+        </span>
+        <span>
+            <button class="suggest-button" (click)="random()">Suggest!</button>
+        </span>
+
+    </div>
+    <app-poster-list [searchText]="searchText" [listSortOrder]="listSortOrder"></app-poster-list>
+</div>

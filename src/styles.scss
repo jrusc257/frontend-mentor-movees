@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap');
+
+:root {
+    --primary-background-color: #291165;
+    --primary-color: #4b2d98;
+    --card-color: #f1f7f7;
+    --text-body-color: #020d1d;
+}
+
+body {
+    margin: 0;
+    background-color: var(--primary-background-color);
+    font-family: 'Oswald', sans-serif;
+}
+
+.mpaa-tag {
+    border: 2px solid var(--text-body-color);
+    border-radius: 10px;
+    width: 60px;
+    display: inline-block;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-body-color);
+}

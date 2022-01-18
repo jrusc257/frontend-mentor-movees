@@ -1,0 +1,9 @@
+<div class="thumbnail-list-container">
+    <ng-container  *ngFor="let movie of movieList | sortByPipe: listSortOrder : 'movieName' : searchText">
+        <app-poster-thumbnail [movieConfig]="movie"></app-poster-thumbnail>
+    </ng-container>
+</div>
+<div class="no-results-container" *ngIf="!(movieList | sortByPipe: listSortOrder : 'movieName' : searchText)?.length">
+    <div class="no-results-text">No Results</div>
+    <img class="test-pattern" src="/assets/images/Test_Pattern.svg" />
+</div>

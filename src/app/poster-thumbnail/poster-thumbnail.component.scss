@@ -1,0 +1,80 @@
+:host {
+    display: inline-block;
+    width: 200px;
+}
+
+.poster-link {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    overflow: hidden;
+    transition: filter 200ms;
+    border-left: 0px transparent;
+    border-right: 0px transparent;
+    height: 300px;
+    margin-bottom: 20px;
+    transition: border 200ms, filter 200ms, outline 200ms;
+    &:hover{
+        background-color: black;
+        border-left: 10px dotted white;
+        border-right: 10px dotted white;
+        outline: 5px solid black;
+        filter: grayscale(70%);
+
+        &:before, &:after {
+            content: '';
+            position: absolute;
+            width: 120%;
+            height: 10px;
+            border: 10px solid black;
+            border-radius: 20px;
+            animation: filmEffect 200ms;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            box-sizing: border-box;
+            left: -10%;
+            opacity: 0.5;
+            filter: blur(5px);
+        }
+        &:after {
+            animation-delay: 100ms;
+        }
+    }
+}
+
+.poster-thumb {
+    height: 300px;
+    margin-bottom: 10px;
+    max-width: 100%;
+}
+
+.title {
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.ratings {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    ::ng-deep.tomato-icon {
+        height: 20px;
+        margin-right: 5px;
+    }
+    .tomato-rating {
+        margin-right: 10px;
+    }
+}
+
+.release-date {
+    font-size: 12px;
+}
+
+@keyframes filmEffect {
+    0% {
+        top: -10px;
+    }
+    100% {
+        top: 100%;
+    }
+}

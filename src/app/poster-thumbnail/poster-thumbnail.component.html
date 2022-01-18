@@ -1,0 +1,8 @@
+<a class="poster-link" [routerLink]="['/details', movieConfig.movieID]">
+    <img [src]="movieConfig.thumbnailURL" class="poster-thumb" />
+</a>
+<div class="title">{{movieConfig.movieName}}</div>
+<div class="ratings">
+    <app-tomato-rating [ratingPercent]="movieConfig.tomatoScore"></app-tomato-rating><span class="mpaa-tag">{{movieConfig.mpaaRating}}</span>
+</div>
+<div class="release-date">{{movieConfig.releaseDate}}</div>

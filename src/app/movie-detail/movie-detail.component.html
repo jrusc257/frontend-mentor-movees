@@ -1,0 +1,16 @@
+<div class="movie-details">
+    <a class="return-link" routerLink="/home">&lt;-- Return</a>
+    <div class="movie-title">{{movieConfig.movieName}}</div>
+    <div class="movie-ratings">
+        <app-tomato-rating [ratingPercent]="movieConfig.tomatoScore"></app-tomato-rating>
+        <span class="mpaa-tag">{{movieConfig.mpaaRating}}</span>
+    </div>
+    <div class="release-date">{{movieConfig.releaseDate}}</div>
+    <p class="movie-description">
+        {{movieConfig.description}}
+    </p>
+    <iframe *ngIf="trailerURL" class="trailer-frame" [src]="trailerURL" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<div class="image-container">
+    <img [src]="movieConfig.largeImgURL" />
+</div>

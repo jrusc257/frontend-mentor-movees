@@ -1,0 +1,11 @@
+:host {
+    display: flex;
+    background-color: var(--primary-color);
+    text-align: left;
+
+    img {
+        height: 30px;
+        padding: 15px;
+        padding-left: 30px;
+    }
+}
