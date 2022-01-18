@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import moviesList from "../../assets/MovieCatalog.json";
+import moviesList from '../../assets/MovieCatalog.json';
 
 @Component({
   selector: 'app-home',
@@ -10,22 +10,22 @@ import moviesList from "../../assets/MovieCatalog.json";
 export class HomeComponent implements OnInit {
 
   searchText;
-  listSortOrder: string = "asc";
+  listSortOrder = 'asc';
 
   constructor(
     private router: Router
   ) {}
 
-  setSortOrder(param) {
+  setSortOrder(param): void {
     this.listSortOrder = param;
   }
 
-  resetSearch() {
-    this.searchText = "";
+  resetSearch(): void {
+    this.searchText = '';
   }
 
-  random(){
-    const randomId =Math.floor(Math.random() * moviesList.movies.length) + 1;
+  random(): void{
+    const randomId = Math.floor(Math.random() * moviesList.movies.length) + 1;
     this.router.navigate(['/details', moviesList.movies[randomId].movieID]);
   }
 

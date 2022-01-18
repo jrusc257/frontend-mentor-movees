@@ -10,8 +10,8 @@ export class TomatoRatingComponent implements OnInit {
   @Input() ratingPercent: string;
   constructor() { }
 
-  ratingFresh() {
-    if(parseInt(this.ratingPercent.replace(/\D+/g, '')) > 50) {
+  ratingFresh(): boolean {
+    if (Number(this.ratingPercent.replace(/\D+/g, '')) > 50) {
       return true;
     } else {
       return false;

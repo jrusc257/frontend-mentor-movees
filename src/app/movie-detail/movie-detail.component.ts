@@ -1,7 +1,7 @@
 import { Component, OnInit, Sanitizer } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DomSanitizer } from '@angular/platform-browser';
-import moviesList from "../../assets/MovieCatalog.json";
+import moviesList from '../../assets/MovieCatalog.json';
 
 @Component({
   selector: 'app-movie-detail',
@@ -21,14 +21,12 @@ export class MovieDetailComponent implements OnInit {
     this.movieList = moviesList.movies;
     this.sanitizer = sanitizer;
     this.movieConfig = this.movieList.filter(obj => {
-      return obj.movieID == this.routeParams.id;
-    })[0]
-    if(this.movieConfig.trailerYouTubeID) {
-      this.trailerURL = this.sanitizer.bypassSecurityTrustResourceUrl("https://www.youtube.com/embed/" + this.movieConfig.trailerYouTubeID);
+      return obj.movieID === this.routeParams.id;
+    })[0];
+    if (this.movieConfig.trailerYouTubeID) {
+      this.trailerURL = this.sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/' + this.movieConfig.trailerYouTubeID);
     }
   }
 
-  ngOnInit(): void {
-    
-  }
+  ngOnInit(): void {}
 }

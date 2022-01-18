@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import moviesList from "../../assets/MovieCatalog.json";
+import moviesList from '../../assets/MovieCatalog.json';
 
 @Component({
   selector: 'app-poster-list',
@@ -9,8 +9,8 @@ import moviesList from "../../assets/MovieCatalog.json";
 export class PosterListComponent implements OnInit {
 
   movieList: any;
-  @Input() searchText: string = "";
-  @Input() listSortOrder: string = "";
+  @Input() searchText = '';
+  @Input() listSortOrder = '';
 
   constructor() {
     this.movieList = moviesList.movies;
